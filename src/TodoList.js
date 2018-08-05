@@ -5,18 +5,21 @@ class TodoList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      list: [
-        'Learn React',
-        'Learn English',
-        'Learn Vue',
-        'Learn Git'
-      ]
+      list: [],
+      inputValue: ''
     }
   }
 
   handleBtnClick() {
     this.setState({
-      list: [...this.state.list, 'Hello World']
+      list: [...this.state.list, this.state.inputValue],
+      inputValue: ''
+    })
+  }
+
+  handleInputChange(e) {
+    this.setState({
+      inputValue: e.target.value
     })
   }
 
@@ -24,7 +27,7 @@ class TodoList extends Component {
     return (
       <div>
         <div>
-          <input />
+          <input value={this.state.inputValue} onChange={this.handleInputChange.bind(this)}/>
           <button onClick={this.handleBtnClick.bind(this)}>Add</button>
         </div>
         <ul>
