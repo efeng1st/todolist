@@ -23,15 +23,6 @@ class TodoList extends Component {
     });
   }
 
-<<<<<<< HEAD
-  handleItemClick(index){
-    const list = [...this.state.list];
-    list.splice(index, 1);
-    
-    this.setState({list})
-  }
-
-=======
   handleItemClick(index) {
     const list = [...this.state.list];
     list.splice(index, 1);
@@ -42,7 +33,6 @@ class TodoList extends Component {
   // 父组件通过属性的形式向子组件传递参数
   // 子组件通过procs接收父组件传递过来的参数
 
->>>>>>> React 中组件的拆分
   render() {
     return (
       <div>
@@ -54,18 +44,10 @@ class TodoList extends Component {
           <button onClick={this.handleBtnClick.bind(this)}>Add</button>
         </div>
         <ul>
-<<<<<<< HEAD
-          {
-            this.state.list.map((item, index) => {
-              return <li key={index} onClick={this.handleItemClick.bind(this, index)}>{item}</li>
-            })
-          }
-=======
           {this.state.list.map((item, index) => {
             return <TodoItem content={item} key={index}/>;
             //return <li key={index} onClick={this.handleItemClick.bind(this, index)}>{item}</li>
           })}
->>>>>>> React 中组件的拆分
         </ul>
       </div>
     );
